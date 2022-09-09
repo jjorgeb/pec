@@ -1,0 +1,33 @@
+{% load static %}
+
+<header class="pt-1 pb-1 mb-1 bg-dark text-white">
+<div class="container-xxl">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-between">
+    <div class="header d-flex flex-column flex-md-row align-items-md-center">
+        <div class="logo">
+            <a href="{% url 'polls:index' %}">Django Boilerplate</a>
+        </div>
+        <div class="modulo ms-md-3">Polls</div>
+    </div>
+
+{% if user.is_authenticated %}
+    <div class="dropdown text-end" style="z-index:2000;">
+        <a href="#" class="d-block text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'images/base/avatar.png' %}" alt="{{user.username}}" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+            <li><a class="dropdown-item" href="{% url 'polls:index' %}" class="nav-link active" aria-current="page"><i class="bi bi-award pe-1"></i>Polls</a></li>
+            <li><a class="dropdown-item" href="{% url 'cbvpolls:index' %}" class="nav-link active" aria-current="page"><i class="bi bi-award pe-1"></i>CBV Polls</a></li>
+            <li><hr class="dropdown-divider"></li>
+        {% if user.is_staff %}
+            <li><a class="dropdown-item" href="{% url 'admin:index' %}" target="_blank"><i class="bi bi-gear pe-1"></i>Administración</a></li>
+        {% endif %}
+            <li><a class="dropdown-item" href="{% url 'sso:logout' %}"><i class="bi bi-door-closed pe-1"></i>Salir</a></li>
+        </ul>
+    </div>
+{% else %}
+    <a href="{% url 'sso:login' %}" class="btn btn-primary btn-sm"><i class="bi bi-door-open pe-1"></i>Entrar</a>
+{% endif %}
+    </div>
+</div>
+</header>

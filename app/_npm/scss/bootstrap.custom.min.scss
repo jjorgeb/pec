@@ -1,0 +1,76 @@
+$color-darkergrey: #333;
+$color-darkgrey: #4d4d4d;
+$color-grey: #666666;
+$color-demigrey: #808080;
+$color-lemigrey: #D6D6D6;
+$color-lightgrey: #E8E8E8;
+$color-whiteish: #F0F0F0 ;
+$color-red: #b5091d;
+
+// bootstrap vars
+$dark: $color-darkergrey;
+$font-size-base: 0.825rem;
+$small-font-size: 0.7rem;
+$nav-link-padding-y: 0.2rem;
+$font-family-base: 'Nunito Sans', sans-serif;
+
+
+// nav-pills
+$nav-pills-link-active-bg: $color-red;
+$nav-link-color: $color-darkergrey;
+$nav-link-hover-color: $color-red;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// common
+a {text-decoration: none;}
+a {color: $color-darkergrey;}
+a:hover {color: $color-red;}
+.header {
+    .logo a {
+        font-size: $font-size-base*1.75;
+        font-weight: 700;
+        color: white;
+        border-right: solid 4px $color-red;
+        padding: 0 16px 0 0;
+    }
+    .modulo {
+        font-size: $font-size-base*1.25;
+        font-weight: 300;
+    }
+}
+
+
+// forms
+select.filtro {width: auto;}
+
+
+// bg-custom
+.bg-darkergrey {color: #fff; background-color: $color-darkergrey;}
+.bg-darkgrey {color: #fff; background-color: $color-darkgrey;}
+.bg-grey {color: #fff; background-color: $color-grey;}
+.bg-demigrey {color: #000; background-color: $color-demigrey;}
+.bg-lemigrey {color: #000; background-color: $color-lemigrey;}
+.bg-lightgrey {color: #000; background-color: $color-lightgrey;}
+.bg-whiteish {color: #000; background-color: $color-whiteish;}
+.bg-indigo {color: #fff; background-color: $indigo-500;}
+.bg-purple {color: #fff; background-color: $purple-500;}
+.bg-pink {color: #fff; background-color: $pink-500;}
+.bg-orange {color: #000; background-color: $orange-500;}
+.bg-cyan {color: #000; background-color: $cyan-500;}
+.bg-teal {color: #000; background-color: $teal-500;}
+
+// tinymce render
+.texto {
+    h1 {font-size: 1.3rem;}
+    h2 {font-size: 1.2rem;}
+    h3 {font-size: 1.15rem;}
+    a {color: $color-red !important; font-weight: 600;}
+}
+
+// bootstrap-tables
+.card-view { 
+    .card-view-title, .card-view-value {margin-bottom: 20px;}
+}
